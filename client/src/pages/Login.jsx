@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import api from '../services/api'
 
 const Login = () => {
   const [data, setData] = useState({
@@ -9,6 +10,7 @@ const Login = () => {
 
   const loginUser = (event) => {
     event.preventDefault()
+    api.get('/')
   }
 
   const handleEmailChange = (event) => {
@@ -22,10 +24,10 @@ const Login = () => {
   return (
     <div>
       <form onSubmit={loginUser}>
-        <label>Email</label>
-        <input type='email' placeholder='enter email...' value={data.email} onChange={handleEmailChange} />
+        <label>E-Mail</label>
+        <input type='email' placeholder='Enter e-mail...' value={data.email} onChange={handleEmailChange} />
         <label>Password</label>
-        <input type='password' placeholder='enter password...' value={data.password} onChange={handlePasswordChange} />
+        <input type='password' placeholder='Enter password...' value={data.password} onChange={handlePasswordChange} />
         <button type="submit">Login</button>
       </form>
     </div>
