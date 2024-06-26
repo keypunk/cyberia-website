@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import loginService from '../services/register'
+import loginService from '../services/login'
 import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const navigate = useNavigate()
   const [data, setData] = useState({
     email: '',
     password: ''
@@ -19,7 +20,11 @@ const Login = () => {
       if (data.error) {
         toast.error(data.error)
       } else {
-        setData()
+        setData({
+          email: '',
+          password: ''
+        })
+        navigate('/dashboard')
       }
     } catch (error) {
     }
