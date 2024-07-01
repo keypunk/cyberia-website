@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
+import Product from './pages/Product'
 import { Toaster } from 'react-hot-toast'
 import { UserContextProvider } from '../context/userContext'
 
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/product/:slug' element={<Product />} />
         <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </UserContextProvider>
