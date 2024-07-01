@@ -1,0 +1,11 @@
+header nav {
+  background-color: #0077c0;
+  padding: 1rem;
+}
+
+header nav a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 1rem;
+}
