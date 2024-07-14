@@ -1,7 +1,19 @@
-import React from 'react'
+import { useEffect, useState } from react
+import { Link } from 'react-router-dom'
 import data from '../data'
 
 const Home = () => {
+  // Implement after backend is ready
+  //
+  // const [products, setProducts] = useState([])
+  // useEffect(() => {
+  //   const fetchData = async() => {
+  //     const result = await axios.get('api/products')
+  //     setProducts(result.data)
+  //   }
+  //   fetchData()
+  // }, [])
+
   return (
     <div>
       <main>
@@ -9,13 +21,13 @@ const Home = () => {
         <div className='products'>
           {data.products.map(product => (
               <div className='product' key={product.slug}>
-                <a href={`/product/${product.slug}`}>
+                <Link to={`/product/${product.slug}`}>
                   <img src={product.image} alt={product.name} />
-                </a>
+                </Link>
                 <div className='product-info'>
-                  <a href={`/product/${product.slug}`}>
+                  <Link to={`/product/${product.slug}`}>
                     <p>{product.name}</p>
-                  </a>
+                  </Link>
                   <p>
                     <strong>{product.price}€</strong>
                   </p>
