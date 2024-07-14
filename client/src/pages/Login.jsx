@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import loginService from '../services/login'
 import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
@@ -14,20 +13,6 @@ const Login = () => {
   const loginUser = async (event) => {
     event.preventDefault()
     const { email, password } = data
-
-    try {
-      const { data } = await loginService.create(email, password)
-      if (data.error) {
-        toast.error(data.error)
-      } else {
-        setData({
-          email: '',
-          password: ''
-        })
-        navigate('/dashboard')
-      }
-    } catch (error) {
-    }
   }
 
   const handleEmailChange = (event) => {

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import registerService from '../services/register'
 import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,18 +14,6 @@ const Register = () => {
   const registerUser = async (event) => {
     event.preventDefault()
     const { name, email, password } = data
-    try {
-      const { data } = await registerService.create(name, email, password)
-      if (data.error) {
-        toast.error(data.error)
-      } else {
-        setData({})
-        toast.success('Registration successful. Welcome!')
-        navigate('/login')
-      }
-    } catch (error) {
-      console.log(error)
-    }
   }
 
   const handleNameChange = (event) => {

@@ -1,24 +1,13 @@
-// Import Modules
-const express = require('express')
-const cors = require('cors')
-const mongoose = require('mongoose')
-const cookieParser = require('cookie-parser')
+import express from 'express'
+import data from './data.js'
 
-// Instanziation of express app
 const app = express()
 
-// Database Connection
-mongoose.connect(process.env.MONGO_URL)
-  .then(() => console.log('Database connected'))
-  .catch((err) => console.log('Database not connected', err))
+app.get('/api/products', (req, res) => {
+  res.send(data.products)
+})
 
-// Middleware
-
-app.use(express.json())
-app.use(cookieParser())
-app.use(express.urlencoded({extended: false}))
-
-app.use('/', require('./routes/authRoutes'))
-
-const PORT = process.env.PORT || 8080
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+const port = process.env.PORT || 8080
+app.listen(port, () => {
+  console.log(`serve at http://localhost:${port}`)
+})
