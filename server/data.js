@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'Latitude 7440',
       slug: 'latitude-7440',
       category: 'Laptops',
@@ -13,6 +14,7 @@ const data = {
       description: 'office laptop'
     },
     {
+      _id: '2',
       name: 'Latitude 7650',
       slug: 'latitude-7650',
       category: 'Laptops',
@@ -25,6 +27,7 @@ const data = {
       description: 'office laptop'
     },
     {
+      _id: '3',
       name: 'Latitude 7640',
       slug: 'latitude-7640',
       category: 'Laptops',
@@ -37,6 +40,7 @@ const data = {
       description: 'office laptop'
     },
     {
+      _id: '4',
       name: 'Latitude 7450',
       slug: 'latitude-7450',
       category: 'Laptops',
