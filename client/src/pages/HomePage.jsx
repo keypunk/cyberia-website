@@ -3,6 +3,8 @@ import axios from 'axios'
 import Product from '../components/Product'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import LoadingBox from '../components/LoadingBox'
+import MessageBox from '../components/MessageBox'
 import { Helmet } from 'react-helmet-async'
 
 const reducer = (state, action) => {
@@ -46,13 +48,19 @@ const HomePage = () => {
       </Helmet>
       <h1>Featured Products</h1>
       <div className='products'>
-        <Row>
-	  {products.map(product => (
-            <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-              <Product product={product} />
-	    </Col>
-	  ))}
-        </Row>
+        { loading ? (
+          <LoadingBox />
+        ) : error ? (
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
+          <Row>
+	    {products.map(product => (
+              <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
+                <Product product={product} />
+	      </Col>
+	    ))}
+          </Row>
+        )}
       </div>
     </div>
   )
