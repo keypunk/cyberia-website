@@ -1,23 +1,24 @@
 import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Product from './pages/Product'
+import Nav from './components/Nav'
+import HomePage from './pages/HomePage'
+import ProductPage from './pages/ProductPage'
 import { Toaster } from 'react-hot-toast'
+import Container from 'react-bootstrap/Container' 
 
 const App = () => {
   return (
-    <>
-      <Navbar />
+    <div className='d-flex flex-column site-container'>
+      <Nav />
       <Toaster position='bottom-right' toastOptions={{duration: 2000}} />
-      <Routes>
-	<Route path='/' element={<Home />} />
-	<Route path='/register' element={<Register />} />
-	<Route path='/login' element={<Login />} />
-	<Route path='/product/:slug' element={<Product />} />
-      </Routes>
-    </>
+      <main>
+	<Container className="mt-3">
+	  <Routes>
+	    <Route path='/' element={<HomePage />} />
+	    <Route path='/product/:slug' element={<ProductPage />} />
+	  </Routes>
+	</Container>
+      </main>
+    </div>
   )
 }
 
