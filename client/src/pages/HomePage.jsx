@@ -26,7 +26,6 @@ const HomePage = () => {
     loading: true,
     error: '',
   })
-  // const [products, setProducts] = useState([])
   useEffect(() => {
     const fetchData = async() => {
       dispatch({ type: 'FETCH_REQUEST' })
@@ -36,7 +35,6 @@ const HomePage = () => {
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message })
       }
-      // setProducts(result.data)
     }
     fetchData()
   }, [])
