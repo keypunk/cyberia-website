@@ -3,6 +3,7 @@ import NavComponent from './components/NavComponent'
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
+import SigninPage from './pages/SigninPage'
 import { Toaster } from 'react-hot-toast'
 import Container from 'react-bootstrap/Container' 
 
@@ -16,6 +17,7 @@ const App = () => {
 	  <Routes>
 	    <Route path='/' element={<HomePage />} />
 	    <Route path='/cart' element={<CartPage />} />
+	    <Route path='/signin' element={<SigninPage />} />
 	    <Route path='/product/:slug' element={<ProductPage />} />
 	  </Routes>
 	</Container>
