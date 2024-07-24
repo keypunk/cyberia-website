@@ -1,7 +1,23 @@
+import bcrypt from 'bcryptjs'
+
 const data = {
+  users: [
+    {
+      name: 'Harun',
+      email: 'harun@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'John',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: '1',
+      // _id: '1',
       name: 'Latitude 7440',
       slug: 'latitude-7440',
       category: 'Laptops',
@@ -14,7 +30,7 @@ const data = {
       description: 'office laptop'
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'Latitude 7650',
       slug: 'latitude-7650',
       category: 'Laptops',
@@ -24,10 +40,10 @@ const data = {
       brand: 'Dell',
       rating: 4.0,
       numReviews: 18,
-      description: 'office laptop'
+      description: 'office laptop',
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'Latitude 7640',
       slug: 'latitude-7640',
       category: 'Laptops',
@@ -37,10 +53,10 @@ const data = {
       brand: 'Dell',
       rating: 3.5,
       numReviews: 13,
-      description: 'office laptop'
+      description: 'office laptop',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'Latitude 7450',
       slug: 'latitude-7450',
       category: 'Laptops',
@@ -50,7 +66,7 @@ const data = {
       brand: 'Dell',
       rating: 4.5,
       numReviews: 23,
-      description: 'office laptop'
+      description: 'office laptop',
     }
   ]
 }
