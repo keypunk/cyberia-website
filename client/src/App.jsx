@@ -10,6 +10,7 @@ import SignupPage from './pages/SignupPage'
 import ShippingAddressPage from './pages/ShippingAddressPage'
 import Container from 'react-bootstrap/Container' 
 import PaymentMethodPage from './pages/PaymentMethodPage'
+import PlaceOrderPage from './pages/PlaceOrderPage'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
 	    <Route path='/signup' element={<SignupPage />} />
 	    <Route path='/shipping' element={<ShippingAddressPage />} />
 	    <Route path='/payment' element={<PaymentMethodPage />} />
+	    <Route path='/placeorder' element={<PlaceOrderPage />} />
 	    <Route path='/product/:slug' element={<ProductPage />} />
 	  </Routes>
 	</Container>
