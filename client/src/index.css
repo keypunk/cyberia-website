@@ -1,6 +1,7 @@
 @import url("styles/product-listing.css");
 @import url("styles/product-overview.css");
 @import url("styles/sign-in.css");
+@import url("styles/checkout-steps.css");
 
 body {
   margin: 0px;

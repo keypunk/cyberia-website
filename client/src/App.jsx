@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
 import SigninPage from './pages/SigninPage'
+import ShippingAddressPage from './pages/ShippingAddressPage'
 import Container from 'react-bootstrap/Container' 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
 	    <Route path='/' element={<HomePage />} />
 	    <Route path='/cart' element={<CartPage />} />
 	    <Route path='/signin' element={<SigninPage />} />
+	    <Route path='/shipping' element={<ShippingAddressPage />} />
 	    <Route path='/product/:slug' element={<ProductPage />} />
 	  </Routes>
 	</Container>
