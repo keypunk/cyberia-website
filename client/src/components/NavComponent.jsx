@@ -21,12 +21,14 @@ const NavComponent = () => {
 
   return (
     <header>
-      <Navbar bg="primary" data-bs-theme="dark">
+      <Navbar bg="primary" data-bs-theme="dark" expand="lg">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>Cyberia</Navbar.Brand>
           </LinkContainer>
-          <Nav className="me-auto">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto w-100 justify-content-end">
             <Link to="/cart" className="nav-link">
               Cart
               {cart.cartItems.length > 0 && (
@@ -58,6 +60,7 @@ const NavComponent = () => {
               </Link>
             )}
           </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </header>
